@@ -1,15 +1,15 @@
 export const site = {
-    title: "Курс по Vue 3",
+    title: "Clash of Clans",
 };
 
 export const listNavMenu = [
     {
-        title: "Home",
+        title: "Главная",
         alias: "home",
         url: "/"
     },
     {
-        title: "About",
+        title: "О нас",
         alias: "about",
         url: "/about"
     }
