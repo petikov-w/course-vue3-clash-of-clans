@@ -5,7 +5,9 @@ const routerHistory = createWebHistory();
 import AboutPage from "@/pages/AboutPage";
 import HomePage from "@/pages/HomePage";
 import notFoundPage from "@/pages/NotFoundPage";
+import Item from "@/pages/_itemAlias"
 import {site} from "@/_config";
+
 
 const routers = createRouter(
     {
@@ -16,7 +18,9 @@ const routers = createRouter(
                 name: "home",
                 component: HomePage,
                 meta: {
-                    title: "Главная"
+                    title: "Главная",
+                    din: false,
+                    isfound: true,
                 }
             },
             {
@@ -24,16 +28,50 @@ const routers = createRouter(
                 name: "about",
                 component: AboutPage,
                 meta: {
-                    title: "О нас"
+                    title: "О нас",
+                    din: false,
+                    isfound: true,
                 }
-
             },
             {
+                path: "/:itemAlias",
+                name: "itemAlias",
+                component: Item,
+                meta: {
+                    title: null,
+                    din: true,
+                    isfound: true,
+                }
+            },
+            // {
+            //     path: "/pers/:id",
+            //     name: "itemAlias",
+            //     component: Item,
+            //     meta: {
+            //         title: null,
+            //         din: true,
+            //         isfound: true,
+            //     }
+            // },
+            // {
+            //     path: "*",
+            //     // redirect: '/404',
+            //     name: "notFound",
+            //     component: notFoundPage,
+            //     meta: {
+            //         title: "страница не найдена",
+            //         din: false,
+            //         isfound: false,
+            //     }
+            // },
+            {
                 path: "/:CatchAll(.*)",
-                name: "404",
+                name: "notFound",
                 component: notFoundPage,
                 meta: {
-                    title: "404 - страница не найдена"
+                    title: "страница не найдена",
+                    din: false,
+                    isfound: false,
                 }
             },
         ]
@@ -41,8 +79,9 @@ const routers = createRouter(
 )
 
 routers.beforeEach((to,from, next) => {
-    document.title = `${site.title} - ${to.meta.title}`;
+    if (!to.meta.din) {document.title = `${site.title} - ${to.meta.title}`;}
     next();
 })
+
 
 export default routers;
