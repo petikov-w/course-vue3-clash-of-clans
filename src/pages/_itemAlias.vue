@@ -24,9 +24,13 @@ export default {
   },
   created() {
     const alias = this.$route.params.itemAlias;
+    console.log('======  ',this.$route)
     const item = items.find(el => el.alias === alias)
-    this.item = item;
-    document.title = `${site.title} - ${item.title}`;
+    if (item) {
+      this.item = item;
+      document.title = `${site.title} - ${item.title}`;
+    } else {window.location.href = '/404';}
+
   },
 
 

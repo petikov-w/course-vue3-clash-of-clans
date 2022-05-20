@@ -1,48 +1,53 @@
 <template lang="pug">
-- var inline = "display: inline;";
-- var sad = "margin-right: 50px;margin-bottom: 50px;";
 
-.card__wrapper(v-for="item in items" :key="item.id" style=inline)
-  card(:title="item.title"
-       :name="`${item.lvl} lvl`"
-       :imgUrl="item.img"
-       :link="`${item.alias}`"
-       style=sad)
-       template(v-slot:body) {{secDescr(item.descr)}}
-       template(v-slot:footer)
-        cardStat(:stats="item.info")
+carousel(:settings="settings" :breakpoints="breakpoints" style:car)
+  slide.card__wrapper(v-for="item in items" :key="item.id")
+    card(:title="item.title"
+         :name="`${item.lvl} lvl`"
+         :imgUrl="item.img"
+         :link="`${item.alias}`")
+         template(v-slot:body) {{secDescr(item.descr)}}
+         template(v-slot:footer)
+          cardStat(:stats="item.info")
+  template(#addons)
+   navigation
 
 </template>
 
 <script>
-import {contentHome} from "@/_config";
 import card from "@/components/UI/Card"
 import cardStat from "@/components/UI/CardStat";
 import items from "@/seeders/items"
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Navigation } from 'vue3-carousel';
 
 export default {
   name: "HomePage",
-  components: {card, cardStat},
+  components: {card, cardStat, Carousel, Slide, Navigation},
   data() {
     return {
-      content: contentHome,
-      items: items
+      items: items,
+      settings: {
+        itemsToShow: 2,
+        wrapAround: true,
+        snapAlign: 'center'
+      }
     }
   },
-  mounted() {
-    const alias = this.$route.params.itemAlias;
-    const item = items.find(el => el.alias === alias)
-    localStorage.setItem('currentAlias', item);
-    //console.log(alias);
-    //this.item = item;
-    // console.log(item);
+  breakpoints: {
+    300: {
+      itemsToShow: 1
+    },
+    700: {
+      itemsToShow: 2
+    }
   },
+
   methods: {
     secDescr(str) {
       return  `${str.substring(0,48)} ...`;
     }
   },
-
 }
 </script>
 

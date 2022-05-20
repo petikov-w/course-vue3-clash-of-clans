@@ -3,7 +3,8 @@
   Header
   .wrapper-content
     .container
-      router-view
+      .view-sm.isCenter
+        router-view
   Footer
 </template>
 

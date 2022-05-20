@@ -43,29 +43,9 @@ const routers = createRouter(
                     isfound: true,
                 }
             },
-            // {
-            //     path: "/pers/:id",
-            //     name: "itemAlias",
-            //     component: Item,
-            //     meta: {
-            //         title: null,
-            //         din: true,
-            //         isfound: true,
-            //     }
-            // },
-            // {
-            //     path: "*",
-            //     // redirect: '/404',
-            //     name: "notFound",
-            //     component: notFoundPage,
-            //     meta: {
-            //         title: "страница не найдена",
-            //         din: false,
-            //         isfound: false,
-            //     }
-            // },
             {
-                path: "/:CatchAll(.*)",
+                // path: "/:CatchAll(.*)",
+                path: "/404",
                 name: "notFound",
                 component: notFoundPage,
                 meta: {
@@ -74,6 +54,7 @@ const routers = createRouter(
                     isfound: false,
                 }
             },
+
         ]
     }
 )

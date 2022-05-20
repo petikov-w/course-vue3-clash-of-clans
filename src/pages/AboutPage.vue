@@ -1,7 +1,11 @@
 <template lang="pug">
 
 h1.article-title {{ content.article01.title }}
-p {{ content.article01.text }}
+ul(v-for="(item,index) in content.article01.list_task" :key="index")
+  li {{ item }}
+.gdd
+  p {{ content.article01.subtitle }}
+  a(:href = 'link') {{ content.article01.kurs.title }}
 
 </template>
 
@@ -11,12 +15,30 @@ export default {
   name: "AboutPage",
   data() {
     return {
-      content: contentAbout
+      content: contentAbout,
+      link: contentAbout.article01.kurs.link
     }
   },
 }
 </script>
 
 <style lang="scss" scoped>
-
+    ul {
+      margin-left: 40px;
+    }
+    li {
+      list-style-type: disc;
+      margin-top: 15px;
+    }
+    p {
+      display: inline;
+    }
+    a {
+      margin-left: 10px;
+      color: #ffffff;
+    }
+    .gdd {
+      margin-top: 20px;
+      opacity: 0.7;
+    }
 </style>
