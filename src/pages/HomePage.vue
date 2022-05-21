@@ -3,7 +3,7 @@
 carousel(:settings="settings" :breakpoints="breakpoints" style:car)
   slide.card__wrapper(v-for="item in items" :key="item.id")
     card(:title="item.title"
-         :name="`${item.lvl} lvl`"
+         :name="`${item.lvl}`"
          :imgUrl="item.img"
          :link="`${item.alias}`")
          template(v-slot:body) {{secDescr(item.descr)}}
@@ -45,7 +45,7 @@ export default {
 
   methods: {
     secDescr(str) {
-      return  `${str.substring(0,48)} ...`;
+      return  `${str.substring(0,35)} ...`;
     }
   },
 }

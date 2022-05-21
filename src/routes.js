@@ -20,7 +20,6 @@ const routers = createRouter(
                 meta: {
                     title: "Главная",
                     din: false,
-                    isfound: true,
                 }
             },
             {
@@ -28,9 +27,8 @@ const routers = createRouter(
                 name: "about",
                 component: AboutPage,
                 meta: {
-                    title: "О нас",
+                    title: "О проекте",
                     din: false,
-                    isfound: true,
                 }
             },
             {
@@ -40,19 +38,20 @@ const routers = createRouter(
                 meta: {
                     title: null,
                     din: true,
-                    isfound: true,
                 }
             },
             {
-                // path: "/:CatchAll(.*)",
                 path: "/404",
                 name: "notFound",
                 component: notFoundPage,
                 meta: {
                     title: "страница не найдена",
                     din: false,
-                    isfound: false,
                 }
+            },
+            {
+                path: "/:CatchAll(.*)",
+                redirect: "/404"
             },
 
         ]

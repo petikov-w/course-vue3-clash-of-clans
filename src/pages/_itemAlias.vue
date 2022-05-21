@@ -1,6 +1,6 @@
 <template lang="pug">
-- var m_top="margin-top: 20px; text-align: center; max-width: 700px;";
-.wrapper(style=m_top)
+- var s_center="text-align: center;";
+.wrapper(style=s_center)
   div(v-if="item" style=m_top)
     img(:src="item.img" :alt="item.title")
     h1.title {{ item.title }}
@@ -37,11 +37,14 @@ export default {
 }
 </script>
 
-<style scoped>
-      .card-stats {
-      margin: 30px 0;
-      border-radius: 14px;
+<style lang="scss" scoped>
+    .card-stats {
+     margin: 30px 0;
+     border-radius: 14px;
     }
-
+    .title {
+      color: #ffffff;
+      opacity: 0.8;
+    }
 
 </style>

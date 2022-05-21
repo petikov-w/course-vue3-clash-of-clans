@@ -9,7 +9,7 @@ export const listNavMenu = [
         url: "/"
     },
     {
-        title: "О нас",
+        title: "О проекте",
         alias: "about",
         url: "/about"
     }
@@ -17,7 +17,7 @@ export const listNavMenu = [
 
 export const contentAbout = {
     article01: {
-        title: "В этом приложении разработано:",
+        title: "В этом проекте разработано:",
         subtitle: "Сделано на курсе",
         kurs: {
             title: "Vue.js 3 С нуля до результата",

@@ -1,77 +1,82 @@
+const training = 'обучение';
+const speed = 'скорость';
+const cost = 'цена';
+const lvl = ' уровень';
+
 export default [
   {
     id: 1,
     alias: 'barbarian',
-    title: 'The Barbarian',
+    title: 'Варвар',
     descr:
-      'The Barbarian is a kilt-clad Scottish warrior with an angry, battle-ready expression, hungry for destruction. He has Killer yellow horseshoe mustache.',
-    img:
-      'https://tocode.ru/static/uploads/courses/3/clash-of-clans-images/barbarian.png',
-    lvl: 4,
+      'Варвар - одетый в килт шотландский воин с сердитым, готовым к битве выражением лица, жаждущий разрушения. У него убийственные желтые подковообразные усы.',
+    img: require('@/assets/img/barbarian.png'),
+    //'https://tocode.ru/static/uploads/courses/3/clash-of-clans-images/barbarian.png',
+    lvl: 4 + lvl,
     info: [
-      { title: 'training', value: '20s' },
-      { title: 'speed', value: '16' },
-      { title: 'cost', value: '150' }
+      { title: training, value: '20с' },
+      { title: speed, value: '16' },
+      { title: cost, value: '150' }
     ]
   },
   {
     id: 2,
     alias: 'archer',
-    title: 'The Archer',
+    title: 'Лучница',
     descr:
-      'The Archer is a female warrior with sharp eyes. She wears a short, light green dress, a hooded cape, a leather belt and an attached small pouch.',
-    img:
-      'https://tocode.ru/static/uploads/courses/3/clash-of-clans-images/archer.png',
-    lvl: 4,
+      'Лучница - женщина-воин с острым взглядом. На ней короткое светло-зеленое платье, накидка с капюшоном, кожаный пояс и прикрепленная к нему маленькая сумочка.',
+    img: require('@/assets/img/archer.png'),
+      // 'https://tocode.ru/static/uploads/courses/3/clash-of-clans-images/archer.png',
+    lvl: 4 + lvl,
     info: [
-      { title: 'training', value: '25s' },
-      { title: 'speed', value: '24' },
-      { title: 'cost', value: '300' }
+      { title: training, value: '25с' },
+      { title: speed, value: '24' },
+      { title: cost, value: '300' }
     ]
   },
   {
     id: 3,
     alias: 'giant',
-    title: 'The Giant',
+    title: 'Гигант',
     descr:
-      'Slow, steady and powerful, Giants are massive warriors that soak up huge amounts of damage. Show them a turret or cannon and you will see their fury unleashed!',
-    img:
-      'https://tocode.ru/static/uploads/courses/3/clash-of-clans-images/giant.png',
-    lvl: 4,
+      'Медленные, устойчивые и мощные Гиганты - это массивные воины, которые наносят огромный урон. Покажите им башню или пушку, и вы увидите, как их ярость высвободится!',
+    img: require('@/assets/img/giant.png'),
+      // 'https://tocode.ru/static/uploads/courses/3/clash-of-clans-images/giant.png',
+    lvl: 4 + lvl,
     info: [
-      { title: 'training', value: '2m' },
-      { title: 'speed', value: '12' },
-      { title: 'cost', value: '2250' }
+      { title: training, value: '2м' },
+      { title: speed, value: '12' },
+      { title: cost, value: '2250' }
     ]
   },
   {
     id: 4,
     alias: 'goblin',
-    title: 'The Goblin',
+    title: 'Гоблин',
     descr:
-      'These pesky little creatures only have eyes for one thing: LOOT! They are faster than a Spring Trap, and their hunger for resources is limitless.',
-    img:
-      'https://tocode.ru/static/uploads/courses/3/clash-of-clans-images/goblin.png',
-    lvl: 5,
+      'У этих надоедливых маленьких существ есть глаза только на одно: ДОБЫЧА! Они быстрее, чем капкан, и их жажда ресурсов безгранична.',
+    img:  require('@/assets/img/goblin.png'),
+      // 'https://tocode.ru/static/uploads/courses/3/clash-of-clans-images/goblin.png',
+    lvl: 5 + lvl,
     info: [
-      { title: 'training', value: '30s' },
-      { title: 'speed', value: '32' },
-      { title: 'cost', value: '100' }
+      { title: training, value: '30с' },
+      { title: speed, value: '32' },
+      { title: cost, value: '100' }
     ]
   },
   {
     id: 5,
     alias: 'wizard',
-    title: 'The Wizard',
+    title: 'Волшебник',
     descr:
-      'The Wizard is a terrifying presence on the battlefield. Pair him up with some of his fellows and cast concentrated blasts of destruction on anything, land or sky!',
-    img:
-      'https://tocode.ru/static/uploads/courses/3/clash-of-clans-images/wizard.png',
-    lvl: 6,
+      'Волшебник - это устрашающее присутствие на поле боя. Соедините его с некоторыми из его товарищей и направьте концентрированные взрывы разрушения на что угодно, землю или небо!',
+    img: require('@/assets/img/wizard.png'),
+      // 'https://tocode.ru/static/uploads/courses/3/clash-of-clans-images/wizard.png',
+    lvl: 6 + lvl,
     info: [
-      { title: 'training', value: '5m' },
-      { title: 'speed', value: '16' },
-      { title: 'cost', value: '3800' }
+      { title: training, value: '5м' },
+      { title: speed, value: '16' },
+      { title: cost, value: '3800' }
     ]
   }
 ]
